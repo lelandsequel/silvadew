@@ -3,35 +3,71 @@
 
 @theme {
   --font-sans: 'Inter', system-ui, sans-serif;
+  --font-display: 'Inter', system-ui, sans-serif;
 }
 
-[data-theme="corporate"] {
-  --p: 210 100% 50%;
-  --pf: 210 100% 40%;
-  --pc: 0 0% 100%;
-  --s: 0 0% 60%;
-  --sf: 0 0% 50%;
+/* Custom dark brutalist theme - distinctive, editorial, no AI slop */
+[data-theme="silvadew"] {
+  /* Deep charcoal base */
+  --p: 200 20% 15%;
+  --pf: 200 20% 12%;
+  --pc: 0 0% 95%;
+  /* Muted teal accent */
+  --s: 175 70% 35%;
+  --sf: 175 70% 28%;
   --sc: 0 0% 100%;
-  --a: 0 0% 70%;
-  --af: 0 0% 60%;
-  --ac: 0 0% 10%;
-  --n: 210 20% 10%;
-  --nf: 210 20% 5%;
-  --nc: 0 0% 100%;
-  --b1: 0 0% 100%;
-  --b2: 210 20% 98%;
-  --b3: 210 20% 96%;
-  --bc: 210 10% 20%;
-  --in: 210 100% 50%;
+  /* Warm neutral */
+  --a: 35 60% 45%;
+  --af: 35 60% 38%;
+  --ac: 0 0% 100%;
+  /* Dark surfaces */
+  --n: 200 15% 8%;
+  --nf: 200 15% 5%;
+  --nc: 0 0% 90%;
+  --b1: 200 20% 4%;
+  --b2: 200 15% 6%;
+  --b3: 200 12% 8%;
+  --bc: 0 0% 85%;
+  /* Accent colors */
+  --in: 195 90% 45%;
   --inc: 0 0% 100%;
-  --su: 150 100% 40%;
+  --su: 160 70% 35%;
   --suc: 0 0% 100%;
-  --wa: 40 100% 50%;
+  --wa: 35 80% 50%;
   --wac: 0 0% 100%;
-  --er: 0 100% 50%;
+  --er: 0 70% 55%;
   --erc: 0 0% 100%;
+  --rounded-box: 0px;
+  --rounded-btn: 0px;
 }
 
 body {
   font-family: var(--font-sans);
+  background-color: #0a0a0a;
+  color: #e5e5e5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Typography refinements */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* Subtle grid pattern background */
+.grid-bg {
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Smooth transitions */
+a, button {
+  transition: all 0.2s ease;
+}
+
+/* Remove default rounded corners for brutalist feel */
+* {
+  border-radius: 0 !important;
 }

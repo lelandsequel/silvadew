@@ -131,63 +131,79 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
       
-      {/* Hero Section */}
-      <section className="min-h-[90vh] flex items-center" style={{backgroundImage: 'linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0ea5e9 100%)', backgroundSize: 'cover', backgroundPosition: 'center'}}>
+      {/* Navigation */}
+      <nav className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur-md">
+        <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+          <a href="/" className="text-xl font-semibold tracking-tight">SILVADEW</a>
+          <div className="hidden md:flex gap-8 text-sm text-white/60">
+            <a href="#services" className="hover:text-white transition-colors">Services</a>
+            <a href="#about" className="hover:text-white transition-colors">About</a>
+            <a href="#contact" className="hover:text-white transition-colors">Contact</a>
+            <a href="/deck" className="hover:text-white transition-colors text-teal-400">View Report</a>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero Section - Brutalist Editorial */}
+      <section className="min-h-screen flex items-center grid-bg pt-16">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl">
-            <div className="badge badge-lg badge-outline text-white border-white/30 mb-6 px-4 py-3">
+          <div className="max-w-3xl">
+            <div className="text-teal-400 text-xs font-medium tracking-widest uppercase mb-6">
               Custom Software & IT Training
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight text-white">
-              Let's Start Something <span className="text-cyan-400">Great.</span>
+            <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-8 tracking-tight">
+              We build software<br />
+              that <span className="text-teal-400">works.</span>
             </h1>
-            <p className="text-xl md:text-2xl text-white/80 mb-10 max-w-2xl">
-              Revolutionizing technology with custom software solutions and world-class IT training. Join 550+ businesses who've transformed their digital presence.
+            <p className="text-xl text-white/50 max-w-xl mb-10 leading-relaxed">
+              Scalable solutions for businesses ready to grow. From custom applications to enterprise systems—we deliver.
             </p>
             <div className="flex flex-wrap gap-4">
-              <a href="#services" className="btn btn-lg bg-cyan-500 hover:bg-cyan-400 text-slate-900 border-none">
-                Our Services
+              <a href="#contact" className="bg-white text-black px-8 py-4 text-sm font-medium hover:bg-teal-400 transition-colors">
+                Get Started
               </a>
-              <a href="#contact" className="btn btn-lg btn-outline text-white border-white hover:bg-white hover:text-slate-900">
-                Get In Touch
+              <a href="#services" className="border border-white/20 px-8 py-4 text-sm font-medium hover:border-white/60 transition-colors">
+                Our Services
               </a>
             </div>
           </div>
-          
-          {/* Stats Row */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20">
+        </div>
+      </section>
+
+      {/* Stats Bar */}
+      <section className="border-y border-white/10 bg-black">
+        <div className="container mx-auto px-6 py-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, i) => (
-              <div key={i} className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10">
-                <div className="text-3xl md:text-4xl font-bold text-cyan-400">{stat.value}</div>
-                <div className="text-white/70 mt-2 text-sm">{stat.label}</div>
+              <div key={i}>
+                <div className="text-3xl font-bold text-white">{stat.value}</div>
+                <div className="text-xs text-white/40 uppercase tracking-wider mt-1">{stat.label}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Services Section */}
-      <section id="services" className="py-24 bg-slate-50">
+      {/* Services Section - Editorial Grid */}
+      <section id="services" className="py-24 bg-black">
         <div className="container mx-auto px-6">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-4xl font-bold mb-4 text-slate-900">What We Do</h2>
-            <p className="text-lg text-slate-600">
-              Comprehensive technology solutions tailored to your business needs.
-            </p>
+          <div className="mb-16">
+            <h2 className="text-3xl font-semibold mb-4">What We Do</h2>
+            <div className="w-12 h-0.5 bg-teal-400"></div>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-px bg-white/10">
             {services.map((service, i) => (
-              <div key={i} className="card bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-slate-100">
-                <div className="card-body p-8">
-                  <div className="w-14 h-14 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center mb-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                    </svg>
-                  </div>
-                  <h3 className="card-title text-2xl text-slate-900">{service.title}</h3>
-                  <p className="text-slate-600 mt-2">{service.description}</p>
+              <div key={i} className="bg-black p-8 hover:bg-white/5 transition-colors group">
+                <div className="text-xs text-teal-400 font-medium tracking-widest uppercase mb-3">
+                  0{i + 1}
                 </div>
+                <h3 className="text-xl font-semibold mb-3 group-hover:text-teal-400 transition-colors">
+                  {service.title}
+                </h3>
+                <p className="text-white/50 leading-relaxed">
+                  {service.description}
+                </p>
               </div>
             ))}
           </div>
@@ -195,45 +211,38 @@ export default function Home() {
       </section>
 
       {/* Industries Section */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-black border-t border-white/10">
         <div className="container mx-auto px-6">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-4xl font-bold mb-4 text-slate-900">Industries We Serve</h2>
-            <p className="text-lg text-slate-600">
-              Tailored solutions across diverse sectors.
-            </p>
+          <div className="mb-16">
+            <h2 className="text-3xl font-semibold mb-4">Industries We Serve</h2>
+            <div className="w-12 h-0.5 bg-teal-400"></div>
           </div>
           
-          <div className="flex flex-wrap gap-3 justify-center">
+          <div className="flex flex-wrap gap-3">
             {industries.map((industry, i) => (
-              <button key={i} className="btn btn-outline btn-lg bg-slate-50 border-slate-200 text-slate-700 hover:bg-cyan-500 hover:text-white hover:border-cyan-500 transition-all">
+              <span key={i} className="px-4 py-2 border border-white/20 text-white/60 text-sm hover:border-teal-400 hover:text-teal-400 transition-colors cursor-default">
                 {industry}
-              </button>
+              </span>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-24 bg-gradient-to-br from-slate-900 to-slate-800">
+      {/* Testimonials - Minimal */}
+      <section className="py-24 bg-black border-t border-white/10">
         <div className="container mx-auto px-6">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-4xl font-bold mb-4 text-white">What Our Clients Say</h2>
-            <p className="text-lg text-white/60">
-              Trusted by businesses worldwide.
-            </p>
+          <div className="mb-16">
+            <h2 className="text-3xl font-semibold mb-4">What Clients Say</h2>
+            <div className="w-12 h-0.5 bg-teal-400"></div>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-px bg-white/10">
             {testimonials.map((testimonial, i) => (
-              <div key={i} className="card bg-white/5 backdrop-blur-sm border border-white/10">
-                <div className="card-body p-8">
-                  <div className="text-cyan-400 text-4xl mb-4">"</div>
-                  <p className="text-white/80 mb-6 italic">{testimonial.text}</p>
-                  <div>
-                    <div className="font-semibold text-white">{testimonial.name}</div>
-                    <div className="text-sm text-white/50">{testimonial.role}</div>
-                  </div>
+              <div key={i} className="bg-black p-8">
+                <p className="text-white/70 leading-relaxed mb-6">"{testimonial.text}"</p>
+                <div>
+                  <div className="font-medium">{testimonial.name}</div>
+                  <div className="text-xs text-white/40">{testimonial.role}</div>
                 </div>
               </div>
             ))}
@@ -241,51 +250,37 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section id="contact" className="py-24 bg-cyan-500">
+      {/* CTA - Brutalist */}
+      <section id="contact" className="py-24 bg-teal-900/20 border-t border-white/10">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold mb-6 text-white">Ready to Transform Your Business?</h2>
-          <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-            Join 550+ businesses trusting Silvadew for their technology needs.
+          <h2 className="text-4xl font-bold mb-6">Ready to build?</h2>
+          <p className="text-white/50 mb-10 max-w-xl mx-auto">
+            Let's discuss your project.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <a href="tel:+15712763358" className="btn btn-lg bg-white text-cyan-600 hover:bg-slate-100 border-none">
-              Call +1 (571) 276-3358
+            <a href="tel:+15712763358" className="bg-white text-black px-8 py-4 font-medium hover:bg-teal-400 transition-colors">
+              +1 (571) 276-3358
             </a>
-            <a href="mailto:info@silvadew.com" className="btn btn-lg btn-outline text-white border-white hover:bg-white hover:text-cyan-600">
-              Email Us
+            <a href="mailto:info@silvadew.com" className="border border-white/30 px-8 py-4 font-medium hover:border-white/60 transition-colors">
+              info@silvadew.com
             </a>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-slate-900 py-12">
+      {/* Footer - Minimal */}
+      <footer className="py-12 bg-black border-t border-white/10">
         <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
             <div>
-              <h3 className="font-bold text-xl text-white mb-4">Silvadew</h3>
-              <p className="text-white/60">
-                Custom software development and IT training for modern businesses.
-              </p>
+              <div className="font-semibold mb-2">SILVADEW</div>
+              <div className="text-xs text-white/40">
+                Custom software development & IT training
+              </div>
             </div>
-            <div>
-              <h4 className="font-semibold mb-4 text-white">Contact</h4>
-              <ul className="space-y-2 text-white/60">
-                <li>+1 (571) 276-3358</li>
-                <li>info@silvadew.com</li>
-              </ul>
+            <div className="text-xs text-white/30">
+              © 2026 Silvadew Inc. All rights reserved.
             </div>
-            <div>
-              <h4 className="font-semibold mb-4 text-white">Quick Links</h4>
-              <ul className="space-y-2 text-white/60">
-                <li><a href="#services" className="hover:text-cyan-400 transition-colors">Services</a></li>
-                <li><a href="#contact" className="hover:text-cyan-400 transition-colors">Contact</a></li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-white/10 mt-8 pt-8 text-center text-white/40">
-            © 2026 Silvadew Inc. All rights reserved.
           </div>
         </div>
       </footer>
