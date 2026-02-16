@@ -9,22 +9,18 @@ const services = [
   {
     title: 'Custom Software Development',
     description: 'Scalable, reliable software tailored to your business needs. From web applications to enterprise solutions.',
-    icon: '🖥️',
   },
   {
     title: 'Web & Mobile Development',
     description: 'Modern websites and mobile apps built with React, Next.js, Node.js, and cutting-edge technologies.',
-    icon: '🌐',
   },
   {
     title: 'IT Training Programs',
     description: 'Industry-leading IT certifications and career training. AWS, Azure, Cybersecurity, and more.',
-    icon: '📚',
   },
   {
     title: 'Digital Marketing',
     description: 'Strategic marketing services to grow your presence. SEO, social media, and content marketing.',
-    icon: '📈',
   },
 ]
 
@@ -118,20 +114,21 @@ export default function Home() {
       />
       
       {/* Hero Section */}
-      <section className="min-h-[80vh] flex items-center bg-base-200">
+      <section className="min-h-[80vh] flex items-center bg-base-200" style={{backgroundImage: 'linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80)', backgroundSize: 'cover', backgroundPosition: 'center'}}>
         <div className="container mx-auto px-6">
           <div className="max-w-3xl">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+            <p className="text-lg font-bold tracking-widest text-primary mb-4 uppercase">Silvadew</p>
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight text-white">
               Let's Start Something Great.
             </h1>
-            <p className="text-xl md:text-2xl text-base-content/80 mb-8">
+            <p className="text-xl md:text-2xl text-white/80 mb-8">
               Revolutionizing technology with custom software solutions and world-class IT training.
             </p>
             <div className="flex flex-wrap gap-4">
               <a href="#services" className="btn btn-primary btn-lg">
                 Our Services
               </a>
-              <a href="#contact" className="btn btn-outline btn-lg">
+              <a href="#contact" className="btn btn-secondary btn-lg">
                 Get In Touch
               </a>
             </div>
@@ -167,7 +164,6 @@ export default function Home() {
             {services.map((service, i) => (
               <div key={i} className="card bg-base-100 shadow-xl">
                 <div className="card-body">
-                  <div className="text-4xl mb-4">{service.icon}</div>
                   <h3 className="card-title text-2xl">{service.title}</h3>
                   <p className="text-base-content/70">{service.description}</p>
                 </div>
