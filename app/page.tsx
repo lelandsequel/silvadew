@@ -22,6 +22,7 @@ export default function Home() {
           <Link href="/" className="text-xl font-semibold tracking-tight">SILVADEW</Link>
           <div className="flex gap-8 text-sm text-white/60">
             <Link href="/services" className="hidden md:block hover:text-white transition-colors">Services</Link>
+            <Link href="/bento" className="hover:text-white transition-colors">Menu</Link>
             <Link href="/work" className="hover:text-white transition-colors">Work</Link>
             <Link href="/about" className="hidden md:block hover:text-white transition-colors">About</Link>
             <Link href="/bold" className="text-yellow-400 font-bold hover:text-yellow-300 transition-colors">Bold</Link>
