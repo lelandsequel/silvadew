@@ -30,8 +30,18 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero Section - Static image fallback */}
-      <section className="relative min-h-screen flex items-center grid-bg">
+      {/* Hero Section - Video background */}
+      <section className="relative min-h-screen flex items-center overflow-hidden">
+        {/* Video Background */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/hero.mp4" type="video/mp4" />
+        </video>
         {/* Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-black/60"></div>
         
