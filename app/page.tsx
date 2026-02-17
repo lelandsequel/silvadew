@@ -24,9 +24,11 @@ export default function Home() {
             <Link href="/services" className="hidden md:block hover:text-white transition-colors">Services</Link>
             <Link href="/work" className="hover:text-white transition-colors">Work</Link>
             <Link href="/about" className="hidden md:block hover:text-white transition-colors">About</Link>
+            <Link href="/bold" className="text-yellow-400 font-bold hover:text-yellow-300 transition-colors">Bold</Link>
             <Link href="/contact" className="hidden md:block hover:text-white transition-colors">Contact</Link>
             <Link href="/terminal" className="hidden md:block hover:text-white transition-colors text-teal-400">Terminal</Link>
             <Link href="/deck" className="hover:text-white transition-colors text-teal-400">Strategy Deck</Link>
+            <Link href="/contrast" className="hover:text-white transition-colors">Contrast</Link>
           </div>
         </div>
       </nav>
