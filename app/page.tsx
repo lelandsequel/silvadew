@@ -41,11 +41,14 @@ export default function Home() {
               Custom Software & IT Training
             </div>
             <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-8 tracking-tight">
-              We build software<br />
-              that <span className="text-teal-400">works.</span>
+              Let's Start Something<br />
+              <span className="text-teal-400">Great.</span>
             </h1>
-            <p className="text-xl text-white/50 max-w-xl mb-10 leading-relaxed">
-              Scalable solutions for businesses ready to grow. From custom applications to enterprise systems—we deliver.
+            <p className="text-xl text-white/50 max-w-xl mb-6 leading-relaxed">
+              Silvadew develops scalable, reliable custom software solutions for businesses of all sizes and industries, turning ideas into top-performing digital products customers truly value.
+            </p>
+            <p className="text-lg text-white/40 mb-10 leading-relaxed">
+              Join 550+ businesses trusting Silvadew to drive revenue through stellar web design solutions.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link href="/contact" className="bg-white text-black px-8 py-4 text-sm font-medium hover:bg-teal-400 transition-colors">

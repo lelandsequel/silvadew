@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Services | Silvadew',
@@ -8,24 +9,36 @@ export const metadata: Metadata = {
 const services = [
   {
     title: 'Custom Software Development',
-    description: 'Scalable, reliable software tailored to your business needs. From web applications to enterprise solutions built with React, Node.js, Python, and cloud technologies.',
+    description: 'Silvadew develops scalable, reliable custom software solutions for businesses of all sizes and industries, turning ideas into top-performing digital products customers truly value.',
     items: ['Web Applications', 'Enterprise Systems', 'API Development', 'Cloud Solutions', 'Database Design']
   },
   {
     title: 'Web & Mobile Development',
-    description: 'Modern websites and mobile apps built with cutting-edge technologies like React, Next.js, Node.js, and native mobile frameworks.',
+    description: 'In a world where every interaction counts, your brand deserves a website that not only showcases your mission and services but also actively engages your visitors. Our professional web design and development services ensure your website stands out.',
     items: ['Responsive Websites', 'Progressive Web Apps', 'iOS & Android Apps', 'E-commerce Platforms', 'CMS Integration']
   },
   {
     title: 'IT Training Programs',
-    description: 'Industry-leading IT certifications and career training. Over 2,500 courses including AWS, Azure, Cybersecurity, and cloud computing.',
+    description: 'Silvadew is considered as one of the best interactive and live e-learning platforms transforming specialized online education. We provide top quality online courses reinforced by online assets. 100% virtual classroom with flexible scheduling.',
     items: ['AWS Certification', 'Azure Training', 'Cybersecurity', 'Cloud Computing', 'Career Coaching']
   },
   {
     title: 'Digital Marketing',
-    description: 'Strategic marketing services to grow your online presence. SEO, social media, content marketing, and paid advertising.',
-    items: ['SEO Optimization', 'Social Media', 'Content Marketing', 'PPC Advertising', 'Analytics']
+    description: 'Whether you are looking for a one-time creative spark or ongoing marketing support, our services are designed to meet you exactly where you are. We offer one-time campaign services and comprehensive ongoing marketing support.',
+    items: ['SEO Optimization', 'Social Media Marketing', 'Content Marketing', 'PPC Advertising', 'Analytics']
   }
+]
+
+const technologies = {
+  frontend: ['HTML 5', 'JavaScript', 'React', 'Material UI', 'Tailwind CSS', 'CSS3', 'Next.js', 'Three.js', 'GSAP'],
+  backend: ['WordPress', 'PHP', 'Laravel', 'CodeIgniter', 'Node.js', 'Python', 'Spring'],
+  design: ['Figma', 'Sketch', 'Adobe XD', 'InVision Studio', 'Axure RP', 'Balsamiq', 'Framer']
+}
+
+const industries = [
+  'Travel', 'Real Estate', 'Digital Industry', 'Healthcare', 
+  'Hospitals', 'Entertainment', 'E-commerce', 'Transportation', 
+  'Agriculture', 'Fitness', 'Fashion', 'Non-profit Org', 'Grocery', 'Skincare'
 ]
 
 export default function Services() {
@@ -33,12 +46,12 @@ export default function Services() {
     <>
       <nav className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur-md">
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-          <a href="/" className="text-xl font-semibold tracking-tight">SILVADEW</a>
+          <Link href="/" className="text-xl font-semibold tracking-tight">SILVADEW</Link>
           <div className="flex gap-8 text-sm text-white/60">
-            <a href="/services" className="hover:text-white transition-colors">Services</a>
-            <a href="/about" className="hover:text-white transition-colors">About</a>
-            <a href="/contact" className="hover:text-white transition-colors">Contact</a>
-            <a href="/deck" className="hover:text-white transition-colors text-teal-400">Strategy Deck</a>
+            <Link href="/services" className="hover:text-white transition-colors">Services</Link>
+            <Link href="/about" className="hover:text-white transition-colors">About</Link>
+            <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
+            <Link href="/deck" className="hover:text-white transition-colors text-teal-400">Strategy Deck</Link>
           </div>
         </div>
       </nav>
@@ -50,7 +63,7 @@ export default function Services() {
             <div className="w-16 h-0.5 bg-teal-400"></div>
           </div>
 
-          <div className="grid gap-px bg-white/10">
+          <div className="grid gap-px bg-white/10 mb-16">
             {services.map((service, i) => (
               <div key={i} className="bg-black p-8 md:p-12 hover:bg-white/5 transition-colors">
                 <div className="max-w-3xl">
@@ -74,6 +87,49 @@ export default function Services() {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Technologies */}
+          <div className="mb-16">
+            <h2 className="text-2xl font-semibold mb-8">Technologies We Use</h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div>
+                <h3 className="text-teal-400 font-medium mb-4">Front-End</h3>
+                <ul className="space-y-2 text-white/50">
+                  {technologies.frontend.map((tech, i) => (
+                    <li key={i}>{tech}</li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-teal-400 font-medium mb-4">Back-End</h3>
+                <ul className="space-y-2 text-white/50">
+                  {technologies.backend.map((tech, i) => (
+                    <li key={i}>{tech}</li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-teal-400 font-medium mb-4">Design</h3>
+                <ul className="space-y-2 text-white/50">
+                  {technologies.design.map((tech, i) => (
+                    <li key={i}>{tech}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Industries */}
+          <div>
+            <h2 className="text-2xl font-semibold mb-8">Industries We Serve</h2>
+            <div className="flex flex-wrap gap-3">
+              {industries.map((industry, i) => (
+                <span key={i} className="px-4 py-2 border border-white/20 text-white/60 text-sm">
+                  {industry}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </section>
