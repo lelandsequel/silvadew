@@ -22,6 +22,7 @@ export default function Home() {
           <Link href="/" className="text-xl font-semibold tracking-tight">SILVADEW</Link>
           <div className="flex gap-8 text-sm text-white/60">
             <Link href="/services" className="hidden md:block hover:text-white transition-colors">Services</Link>
+            <Link href="/work" className="hover:text-white transition-colors">Work</Link>
             <Link href="/about" className="hidden md:block hover:text-white transition-colors">About</Link>
             <Link href="/contact" className="hidden md:block hover:text-white transition-colors">Contact</Link>
             <Link href="/deck" className="hover:text-white transition-colors text-teal-400">Strategy Deck</Link>
@@ -89,6 +90,7 @@ export default function Home() {
                 Custom software, web development, IT training, and digital marketing.
               </p>
             </Link>
+            <Link href="/work" className="hover:text-white transition-colors">Work</Link>
             <Link href="/about" className="bg-black p-8 hover:bg-white/5 transition-colors group">
               <div className="text-xs text-teal-400 font-medium tracking-widest uppercase mb-3">About</div>
               <h3 className="text-xl font-semibold mb-3 group-hover:text-teal-400 transition-colors">
