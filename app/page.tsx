@@ -24,6 +24,7 @@ export default function Home() {
             <Link href="/services" className="hidden md:block hover:text-white transition-colors">Services</Link>
             <Link href="/bento" className="hover:text-white transition-colors">Menu</Link>
             <Link href="/work" className="hover:text-white transition-colors">Work</Link>
+            <Link href="/editorial" className="hover:text-white transition-colors">Editorial</Link>
             <Link href="/about" className="hidden md:block hover:text-white transition-colors">About</Link>
             <Link href="/bold" className="text-yellow-400 font-bold hover:text-yellow-300 transition-colors">Bold</Link>
             <Link href="/contact" className="hidden md:block hover:text-white transition-colors">Contact</Link>
