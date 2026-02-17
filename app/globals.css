@@ -71,3 +71,26 @@ a, button {
 * {
   border-radius: 0 !important;
 }
+
+/* Bold Page Styles - Porky's Pig Fry */
+
+/* Stroke text effect */
+.stroke-text {
+  -webkit-text-stroke: 3px black;
+  color: transparent;
+}
+
+/* Marquee animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+  width: 200%;
+}
