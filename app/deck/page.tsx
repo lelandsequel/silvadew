@@ -403,6 +403,7 @@ export default function Deck() {
         <div className="border-t border-white/10 bg-black py-6">
           <div className="container mx-auto px-6 flex justify-between items-center">
             <button 
+              type="button"
               onClick={prevSlide}
               disabled={currentSlide === 0}
               className="px-6 py-3 border border-white/20 hover:border-white/60 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
@@ -414,6 +415,7 @@ export default function Deck() {
               {slides.map((_, i) => (
                 <button
                   key={i}
+                  type="button"
                   onClick={() => goToSlide(i)}
                   className={`w-2 h-2 ${i === currentSlide ? 'bg-teal-400' : 'bg-white/20'}`}
                 />
@@ -421,6 +423,7 @@ export default function Deck() {
             </div>
             
             <button 
+              type="button"
               onClick={nextSlide}
               disabled={currentSlide === slides.length - 1}
               className="px-6 py-3 bg-white text-black font-medium hover:bg-teal-400 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"

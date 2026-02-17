@@ -20,30 +20,19 @@ export default function Home() {
       <nav className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur-md">
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
           <Link href="/" className="text-xl font-semibold tracking-tight">SILVADEW</Link>
-          <div className="hidden md:flex gap-8 text-sm text-white/60">
-            <Link href="/services" className="hover:text-white transition-colors">Services</Link>
-            <Link href="/about" className="hover:text-white transition-colors">About</Link>
-            <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
+          <div className="flex gap-8 text-sm text-white/60">
+            <Link href="/services" className="hidden md:block hover:text-white transition-colors">Services</Link>
+            <Link href="/about" className="hidden md:block hover:text-white transition-colors">About</Link>
+            <Link href="/contact" className="hidden md:block hover:text-white transition-colors">Contact</Link>
             <Link href="/deck" className="hover:text-white transition-colors text-teal-400">Strategy Deck</Link>
           </div>
         </div>
       </nav>
 
-      {/* Hero Section with Video */}
-      <section className="relative min-h-screen flex items-center">
-        {/* Video Background */}
-        <video 
-          autoPlay 
-          muted 
-          loop 
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-40"
-        >
-          <source src="https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-futuristic-devices-99786-large.mp4" type="video/mp4" />
-        </video>
-        
+      {/* Hero Section - Static image fallback */}
+      <section className="relative min-h-screen flex items-center grid-bg">
         {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-black/60"></div>
         
         {/* Content */}
         <div className="relative z-10 container mx-auto px-6 pt-20">
